@@ -1,0 +1,66 @@
+﻿@model LibraryManagementSystem.Models.tblissuedbookdetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblissuedbookdetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BookId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IssuesDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IssuesDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReturnDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReturnDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RetrunStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RetrunStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fine)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

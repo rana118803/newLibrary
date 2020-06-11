@@ -1,0 +1,101 @@
+﻿@model IEnumerable<LibraryManagementSystem.Models.tblissuedbookdetails>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row pad-botm">
+            <div class="col-md-12">
+                <h4 class="header-line">Manage Issued Books</h4>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Issued Books
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Student ID</th>
+                                            <th>Book ID</th>
+                                            <th>Issued Date</th>
+                                            <th>Return Date</th>
+                                            <th>Fine</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                        @foreach (var item in Model)
+                                        {
+
+                                            <tr class="odd gradeX">
+                                                <td class="center">@Html.DisplayFor(modelItem => item.id)</td>
+                                                <td class="center">@Html.DisplayFor(modelItem => item.StudentID)</td>
+                                                <td class="center">@Html.DisplayFor(modelItem => item.BookId)</td>
+                                                <td class="center">@Html.DisplayFor(modelItem => item.IssuesDate)</td>
+                                                @if (item.ReturnDate == null)
+                                                {
+                                                    <td class="center">
+                                                        <h5>
+                                                            <span style="color:red">
+                                                                Not Return Yet
+
+                                                            </span>
+                                                        </h5>
+                                                    </td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="center">
+                                                        @Html.DisplayFor(modelItem => item.ReturnDate)
+                                                    </td>
+                                                }
+
+
+
+
+                                                <td class="center">@Html.DisplayFor(modelItem => item.fine)</td>
+
+
+
+
+                                                <td class="center">
+
+                                                    @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-primary" })
+
+
+
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!--End Advanced Tables -->
+                    <div>
+                        <h5> or new Issue book?@Html.ActionLink("Go to new", "Create") </h5>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</div>

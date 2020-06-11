@@ -1,0 +1,69 @@
+﻿@model LibraryManagementSystem.Models.tblissuedbookdetails
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<div class="content-wra">
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row pad-botm">
+                <div class="col-md-12">
+                    <h4 class="header-line">Issue a New Book</h4>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-sm-6 col-xs-12 col-md-offset-1" >
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Issue a New Book
+                        </div>
+                        <div class="panel-body">
+                            <form role="form" method="post">
+
+
+
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.StudentID, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.StudentID, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.BookId, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.BookId, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.BookId, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.IssuesDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.IssuesDate, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.IssuesDate, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="form-group">
+                                    <button type="submit" name="return" id="submit" class="btn btn-info">IssueBook</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

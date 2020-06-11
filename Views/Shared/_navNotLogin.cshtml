@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="@Url.Content("~/Style/css/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("Style/css/font-awesome.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Style/css/style.css")" rel="stylesheet" type="text/css" />
+    <div class="navbar navbar-inverse set-radius-zero">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">
+                    <img src="~/Style/img/logo.png" />
+                </a>
+
+            </div>
+        </div>
+    </div>
+    <!-- LOGO HEADER END-->
+    <section class="menu-section">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-12">
+                    <div class="navbar-collapse collapse ">
+                        <ul id="menu-top" class="nav navbar-nav navbar-right">
+
+                            <li>@Html.ActionLink("ADMIN LOGIN", "AdminLogin", "Home")</li>
+                            <li>@Html.ActionLink("USER SIGNUP", "Create", "Register")</li>
+                            <li>@Html.ActionLink("USER LOGIN", "UserLogin", "Home")</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</head>
+<body>
+
+    <div class="container body-content">
+        <br />
+        @RenderBody()
+
+
+
+    </div>
+    <section class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    &copy;Online Library Management System | Designed by : <span>FCAI-TEAM</span></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

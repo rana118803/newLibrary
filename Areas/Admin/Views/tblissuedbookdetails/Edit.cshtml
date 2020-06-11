@@ -1,0 +1,92 @@
+﻿@model LibraryManagementSystem.Models.tblissuedbookdetails
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+
+<div class="content-wra
+    <div class="content-wrapper">
+         <div class="container">
+        <div class="row pad-botm">
+            <div class="col-md-12">
+                <h4 class="header-line">Issued Book Details</h4>
+
+                            </div>
+
+</div>
+<div class="row">
+<div class="col-md-10 col-sm-6 col-xs-12 col-md-offset-1"">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            Issued Book Details
+        </div>
+        <div class="panel-body">
+
+
+
+                <tbody>
+
+
+                    <div>
+                        @Html.LabelFor(model => model.BookId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.BookId, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+                            @Html.ValidationMessageFor(model => model.BookId, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div>
+                        @Html.LabelFor(model => model.StudentID, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.StudentID, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+                            @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div>
+                        @Html.LabelFor(model => model.IssuesDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.IssuesDate, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+                            @Html.ValidationMessageFor(model => model.IssuesDate, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div>
+                        @Html.LabelFor(model => model.ReturnDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.ReturnDate, new { htmlAttributes = new { @class = "form-control", disabled = "disabled", @readonly = "readonly" } })
+                            @Html.ValidationMessageFor(model => model.ReturnDate, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <form role="form" method="post">
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.fine, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(Model => Model.fine, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.fine, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            @Html.ActionLink("Return Book", "Delete", new { id = Model.id }, new { @class = "btn btn-info" })
+
+                            <input type="submit" value="Add Fine" class="btn btn-info" />
+                           
+                        </div>
+                    </form>
+
+</tbody>
+
+        </div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+        

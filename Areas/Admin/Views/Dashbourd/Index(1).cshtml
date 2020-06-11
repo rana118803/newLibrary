@@ -1,0 +1,68 @@
+﻿@model LibraryManagementSystem.Models.HomeViewModel
+
+@{
+    ViewBag.Title = "Index";
+   
+}
+
+<div class="content-wrapper">
+    <div class="container">
+        <div class="row pad-botm">
+            <div class="col-md-12">
+                <h4 class="header-line">ADMIN DASHBOARD</h4>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <div class="alert alert-danger back-widget-set text-center">
+                    <i class="fa fa-book fa-5x"></i>
+                    <h2>Books Listed</h2>
+                    <h2>@Model.tblbooks.Count</h2>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <div class="alert alert-info back-widget-set text-center">
+                    <i class="fa fa-bars fa-5x"></i>
+                    <h2>Book Issued</h2>
+                    <h2>@Model.tblissuedbookdetails.Count</h2>
+
+                </div>
+            </div>
+
+
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <div class="alert alert-success back-widget-set text-center">
+                    <i class="fa fa-recycle fa-5x"></i>
+                    <h2>Books Returned</h2>
+                    <h2>@Model.issuedbookReturned.Count</h2>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                <div class="alert alert-danger back-widget-set text-center">
+                    <i class="fa fa-user fa-5x"></i>
+                    <h2>Authors Listed</h2>
+                    <h2>@Model.tblauthors.Count</h2>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 col-sm-3 rscol-xs-6">
+                <div class="alert alert-info back-widget-set text-center">
+                    <i class="fa fa-file-archive-o fa-5x"></i>
+                    <h2>Categories</h2>
+                    <h2>@Model.tblcategory.Count</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

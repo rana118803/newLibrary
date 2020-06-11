@@ -1,0 +1,68 @@
+﻿@model LibraryManagementSystem.Models.tblstudents
+
+
+@{
+    ViewBag.Title = "UserLogin";
+    Layout = "~/Views/Shared/_navNotLogin.cshtml";
+
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row pad-botm">
+                <div class="col-md-12">
+                    <h4 class="header-line">USER LOGIN FORM</h4>
+                </div>
+            </div>
+
+            <!--LOGIN PANEL START-->
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            LOGIN FORM
+                        </div>
+                        <div class="panel-body">
+                            <form role="form" method="post">
+                                <div class="form-group">
+                                    <label>Enter Email</label>
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.EditorFor(model => model.EmailId, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.EmailId, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Password</label>
+
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                    
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="submit" value="LOGIN" class="btn btn-info" /> | <a href="#">Not Register Yet</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
